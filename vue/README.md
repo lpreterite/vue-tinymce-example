@@ -1,5 +1,8 @@
 # 在Vue-Cli中使用
 
+![vue](https://img.shields.io/github/package-json/dependency-version/lpreterite/vue-tinymce/vue)
+![tinymce](https://img.shields.io/badge/tinymce-%5E5.3.x-blue)
+
 ## 说在前头
 
 **值得注意的是按需引入使用**，需要十分清楚你所使用的编辑器主题、皮肤和插件，当你设置的编辑器主题、皮肤和插件没有正确引入导致编辑器无法显示。
@@ -99,6 +102,12 @@ import 'tinymce/plugins/table' //表格插件
 import 'tinymce/plugins/lists' //列表插件
 import 'tinymce/plugins/quickbars' //快速栏插件
 import 'tinymce/plugins/fullscreen' //全屏插件
+```
+
+> 注：**5.3.x版本**需要额外引进图标，没有所有按钮就会显示not found
+
+```js
+import 'tinymce/icons/default/icons'
 ```
 
 具体看这个文件[main.js](src/main.js)

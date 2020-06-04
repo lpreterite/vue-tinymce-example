@@ -9,7 +9,7 @@
   "dependencies": {
     "@packy-tang/vue-tinymce": "^1.0.0",
     "core-js": "^3.4.4",
-    "tinymce": "^5.1.5",
+    "tinymce": "^5.3.1",
     "vue": "^2.6.10"
   },
   "devDependencies": {
