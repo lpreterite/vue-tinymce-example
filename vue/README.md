@@ -16,6 +16,8 @@
 
 ## 全局引入
 
+[例子入口](./use_in_global/)
+
 ### 第一步，安装
 
 ```sh
@@ -27,7 +29,7 @@ npm i tinymce @packy-tang/vue-tinymce
 复制`node_modules/tinymce`目录下所有文件至`public/`目录下
 
 ```sh
-cp node_modules/tinymce public/
+cp node_modules/tinymce/ public/
 ```
 
 复制后大概是这样的
@@ -35,6 +37,17 @@ cp node_modules/tinymce public/
 ```sh
 public/
 - tinymce
+```
+
+然后在`public/index.html`页面全局引入`tinymce`
+
+```html
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script src="./tinymce/tinymce.min.js"></script><!-- tinymce -->
+    <script src="./tinymce/langs/zh_CN.js"></script><!-- 本地化 -->
+  </body>
+</html>
 ```
 
 ### 第三步，使用插件
@@ -75,6 +88,8 @@ export default {
 
 ## 按需引入
 
+[例子入口](./use_in_global/)
+
 ### 第一步，安装
 
 ```sh
@@ -108,6 +123,13 @@ import 'tinymce/plugins/fullscreen' //全屏插件
 
 ```js
 import 'tinymce/icons/default/icons'
+```
+
+本地化
+
+```js
+//本地化
+import './utils/tinymce/langs/zh_CN.js'
 ```
 
 具体看这个文件[main.js](src/main.js)
