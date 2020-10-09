@@ -67,7 +67,7 @@ Vue.use(VueTinymce)              // 安装vue的tinymce组件
 
 具体看[main.js](use_in_global/src/main.js)
 
-### 第三步，使用插件
+### 第四步，使用插件
 
 ```html
 <!-- # src/App.vue -->
