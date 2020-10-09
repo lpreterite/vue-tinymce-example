@@ -45,10 +45,13 @@ public/
     <div id="app"></div>
     <!-- built files will be auto injected -->
     <script src="./tinymce/tinymce.min.js"></script><!-- tinymce -->
-    <script src="./tinymce/langs/zh_CN.js"></script><!-- 本地化 -->
   </body>
 </html>
 ```
+
+#### 全局引入的本地化处理
+
+将`zh_CN.js`文件直接放到`public/tinymce/langs/`目录下就可以了，配置时加上`{language: 'zh_CN'}`的设置就能实现。
 
 ### 第三步，使用插件
 
@@ -77,7 +80,7 @@ export default {
         toolbar_drawer: "sliding",
         quickbars_selection_toolbar: "removeformat | bold italic underline strikethrough | fontsizeselect forecolor backcolor",
         plugins: "link image media table lists fullscreen quickbars",
-        language: 'zh_CN',
+        language: 'zh_CN', //本地化设置
         height: 350
       }
     }
@@ -88,7 +91,7 @@ export default {
 
 ## 按需引入
 
-[例子入口](./use_in_global/)
+[例子入口](./use_import/)
 
 ### 第一步，安装
 
@@ -132,7 +135,7 @@ import 'tinymce/icons/default/icons'
 import './utils/tinymce/langs/zh_CN.js'
 ```
 
-具体看这个文件[main.js](src/main.js)
+具体看这个文件[main.js](use_import/src/main.js)
 
 ### 第三步，使用插件
 
