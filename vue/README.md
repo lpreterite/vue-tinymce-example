@@ -53,6 +53,20 @@ public/
 
 将`zh_CN.js`文件直接放到`public/tinymce/langs/`目录下就可以了，配置时加上`{language: 'zh_CN'}`的设置就能实现。
 
+### 第三步，引入并安装插件
+
+```js
+import Vue from 'vue'
+import App from './App.vue'
+import tinymce from 'tinymce'
+import VueTinymce from '@packy-tang/vue-tinymce'
+
+Vue.prototype.$tinymce = tinymce // 将全局tinymce对象指向给Vue作用域下
+Vue.use(VueTinymce)              // 安装vue的tinymce组件
+```
+
+具体看[main.js](use_in_global/src/main.js)
+
 ### 第三步，使用插件
 
 ```html
