@@ -1,0 +1,60 @@
+{
+  "_from": "tinymce@5.10.x",
+  "_id": "tinymce@5.10.7",
+  "_inBundle": false,
+  "_integrity": "sha512-9UUjaO0R7FxcFo0oxnd1lMs7H+D0Eh+dDVo5hKbVe1a+VB0nit97vOqlinj+YwgoBDt6/DSCUoWqAYlLI8BLYA==",
+  "_location": "/tinymce",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "tinymce@5.10.x",
+    "name": "tinymce",
+    "escapedName": "tinymce",
+    "rawSpec": "5.10.x",
+    "saveSpec": null,
+    "fetchSpec": "5.10.x"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmmirror.com/tinymce/-/tinymce-5.10.7.tgz",
+  "_shasum": "d89d446f1962f2a1df6b2b70018ce475ec7ffb80",
+  "_spec": "tinymce@5.10.x",
+  "_where": "D:\\works\\github\\vue-tinymce-example\\vite\\use_import",
+  "author": {
+    "name": "Tiny Technologies, Inc"
+  },
+  "bugs": {
+    "url": "https://github.com/tinymce/tinymce/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Web based JavaScript HTML WYSIWYG editor control.",
+  "homepage": "https://www.tiny.cloud/",
+  "keywords": [
+    "wysiwyg",
+    "tinymce",
+    "richtext",
+    "javascript",
+    "html",
+    "text",
+    "rich editor",
+    "rich text editor",
+    "rte",
+    "rich text",
+    "contenteditable",
+    "editing"
+  ],
+  "license": "LGPL-2.1",
+  "main": "tinymce.js",
+  "name": "tinymce",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinymce/tinymce.git",
+    "directory": "modules/tinymce"
+  },
+  "types": "tinymce.d.ts",
+  "version": "5.10.7"
+}
