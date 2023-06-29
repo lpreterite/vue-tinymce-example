@@ -13,6 +13,7 @@ npm i tinymce @tinymce/tinymce-vue
 ```js
 // # src/main.js
 
+import 'tinymce' //引用tinymce的核心
 //样式
 import 'tinymce/skins/content/default/content.min.css'
 import 'tinymce/skins/ui/oxide/skin.min.css'
@@ -30,7 +31,6 @@ import 'tinymce/plugins/lists' //列表插件
 import 'tinymce/plugins/quickbars' //快速栏插件
 import 'tinymce/plugins/fullscreen' //全屏插件
 
-import tinymce from 'tinymce' //引用tinymce的核心
 import TinymceVue from '@tinymce/tinymce-vue' //引用Vue组件
 Vue.component('TinymceVue', TinymceVue)
 ```
