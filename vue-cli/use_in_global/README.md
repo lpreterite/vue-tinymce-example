@@ -1,58 +1,58 @@
-# 在Vite中按需引用tinymce
+# 在Vue-cli中全局挂载tinymce
 
+![vue](https://img.shields.io/badge/vue-%5E2.x-blue)
 ![tinymce](https://img.shields.io/badge/tinymce-%5E5.3.x-blue)
 
 ## 第一步，安装
 
 ```sh
-npm i tinymce @tinymce/tinymce-vue
+npm i tinymce @packy-tang/vue-tinymce
 ```
 
-## 第二步，引入文件
+## 第二步，搬运
+
+复制`node_modules/tinymce`目录下所有文件至`public/`目录下
+
+```sh
+cp node_modules/tinymce/ public/
+```
+
+复制后大概是这样的
+
+```sh
+public/
+- tinymce
+```
+
+然后在`public/index.html`页面全局引入`tinymce`
+
+```html
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script src="./tinymce/tinymce.min.js"></script><!-- tinymce -->
+  </body>
+</html>
+```
+
+### 全局引入的本地化处理
+
+将`zh_CN.js`文件直接放到`public/tinymce/langs/`目录下就可以了，配置时加上`{language: 'zh_CN'}`的设置就能实现。
+
+## 第三步，引入并安装插件
 
 ```js
-// # src/main.js
+import Vue from 'vue'
+import App from './App.vue'
+import tinymce from 'tinymce'
+import VueTinymce from '@packy-tang/vue-tinymce'
 
-//样式
-import 'tinymce/skins/content/default/content.min.css'
-import 'tinymce/skins/ui/oxide/skin.min.css'
-import 'tinymce/skins/ui/oxide/content.min.css'
-
-//主题
-import 'tinymce/themes/silver'
-
-//插件
-import 'tinymce/plugins/link' //链接插件
-import 'tinymce/plugins/image' //图片插件
-import 'tinymce/plugins/media' //媒体插件
-import 'tinymce/plugins/table' //表格插件
-import 'tinymce/plugins/lists' //列表插件
-import 'tinymce/plugins/quickbars' //快速栏插件
-import 'tinymce/plugins/fullscreen' //全屏插件
-
-import tinymce from 'tinymce' //引用tinymce的核心
-import TinymceVue from '@tinymce/tinymce-vue' //引用Vue组件
-Vue.component('TinymceVue', TinymceVue)
+Vue.prototype.$tinymce = tinymce // 将全局tinymce对象指向给Vue作用域下
+Vue.use(VueTinymce)              // 安装vue的tinymce组件
 ```
 
-具体看这个文件[main.js](vite/use_import/src/main.js)
+具体看[main.js](use_in_global/src/main.js)
 
-> 注：**5.3.x版本**需要额外引进图标，没有所有按钮就会显示not found
-
-```js
-import 'tinymce/icons/default/icons'
-```
-
-### 本地化
-
-```js
-//本地化
-import './utils/tinymce/langs/zh_CN.js'
-```
-
-本地化文件可以在官网中下载 -> [传送门](https://www.tiny.cloud/get-tiny/language-packages/) | [5.x全语言直接下载](https://download.tiny.cloud/tinymce/community/languagepacks/5/langs.zip)
-
-## 第三步，使用插件
+## 第四步，使用插件
 
 ```html
 <!-- # src/App.vue -->
@@ -79,23 +79,11 @@ export default {
         toolbar_drawer: "sliding",
         quickbars_selection_toolbar: "removeformat | bold italic underline strikethrough | fontsizeselect forecolor backcolor",
         plugins: "link image media table lists fullscreen quickbars",
-        language: 'zh_CN',
+        language: 'zh_CN', //本地化设置
         height: 350
       }
     }
   }
 }
 </script>
-```
-
-你可以下载这个项目到本地运行看看效果。
-
-```sh
-$ npm run dev
-
-  VITE v4.3.9  ready in 1585 ms
-
-  ➜  Local:   http://127.0.0.1:5173/
-  ➜  Network: use --host to expose
-  ➜  press h to show help
 ```

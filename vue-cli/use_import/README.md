@@ -1,11 +1,12 @@
-# 在Vite中按需引用tinymce
+# 在Vue-cli中按需引用tinymce
 
+![vue](https://img.shields.io/badge/vue-%5E2.x-blue)
 ![tinymce](https://img.shields.io/badge/tinymce-%5E5.3.x-blue)
 
 ## 第一步，安装
 
 ```sh
-npm i tinymce @tinymce/tinymce-vue
+npm i tinymce @packy-tang/vue-tinymce
 ```
 
 ## 第二步，引入文件
@@ -29,13 +30,7 @@ import 'tinymce/plugins/table' //表格插件
 import 'tinymce/plugins/lists' //列表插件
 import 'tinymce/plugins/quickbars' //快速栏插件
 import 'tinymce/plugins/fullscreen' //全屏插件
-
-import tinymce from 'tinymce' //引用tinymce的核心
-import TinymceVue from '@tinymce/tinymce-vue' //引用Vue组件
-Vue.component('TinymceVue', TinymceVue)
 ```
-
-具体看这个文件[main.js](vite/use_import/src/main.js)
 
 > 注：**5.3.x版本**需要额外引进图标，没有所有按钮就会显示not found
 
@@ -43,14 +38,14 @@ Vue.component('TinymceVue', TinymceVue)
 import 'tinymce/icons/default/icons'
 ```
 
-### 本地化
+本地化
 
 ```js
 //本地化
 import './utils/tinymce/langs/zh_CN.js'
 ```
 
-本地化文件可以在官网中下载 -> [传送门](https://www.tiny.cloud/get-tiny/language-packages/) | [5.x全语言直接下载](https://download.tiny.cloud/tinymce/community/languagepacks/5/langs.zip)
+具体看这个文件[main.js](use_import/src/main.js)
 
 ## 第三步，使用插件
 
@@ -88,14 +83,3 @@ export default {
 </script>
 ```
 
-你可以下载这个项目到本地运行看看效果。
-
-```sh
-$ npm run dev
-
-  VITE v4.3.9  ready in 1585 ms
-
-  ➜  Local:   http://127.0.0.1:5173/
-  ➜  Network: use --host to expose
-  ➜  press h to show help
-```
