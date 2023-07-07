@@ -22,7 +22,9 @@ export default {
         quickbars_selection_toolbar: "removeformat | bold italic underline strikethrough | fontsizeselect forecolor backcolor",
         plugins: "link image media table lists fullscreen quickbars",
         language: 'zh_CN',
-        height: 350
+        height: 350,
+        skin: false,
+        content_css: false, //要自定义编辑器内部的样式，文件建议放在全局可访问的地方进行管理。
       }
     }
   },
