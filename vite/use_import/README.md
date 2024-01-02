@@ -15,9 +15,9 @@ npm i tinymce @tinymce/tinymce-vue
 
 import 'tinymce' //引用tinymce的核心
 //样式
-import 'tinymce/skins/content/default/content.min.css'
-import 'tinymce/skins/ui/oxide/skin.min.css'
-import 'tinymce/skins/ui/oxide/content.min.css'
+// import "tinymce/skins/content/default/content.min.css"; //默认模式下添加并不会起效果，开启内联模式时，请加上。
+import "tinymce/skins/ui/oxide/skin.min.css";
+// import "tinymce/skins/ui/oxide/content.min.css"; //此处引用内容为编辑器文本区域的内部样式，需在编辑器设置中引入。
 
 //主题
 import 'tinymce/themes/silver'
@@ -80,7 +80,9 @@ export default {
         quickbars_selection_toolbar: "removeformat | bold italic underline strikethrough | fontsizeselect forecolor backcolor",
         plugins: "link image media table lists fullscreen quickbars",
         language: 'zh_CN',
-        height: 350
+        height: 350,
+        skin: false, //已在main.js中引入，所以无需再加载。
+        content_css: "/tinymce/skins/ui/oxide/content.css", //要自定义编辑器内部的样式，目前文件存放在public目录下。
       }
     }
   }
