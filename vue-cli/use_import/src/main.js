@@ -4,7 +4,7 @@ import tinymce from 'tinymce'
 import VueTinymce from '@packy-tang/vue-tinymce'
 
 //样式
-import 'tinymce/skins/content/default/content.min.css'
+// import "tinymce/skins/content/default/content.min.css"; //默认模式下添加并不会起效果，开启内联模式时，请加上。
 import 'tinymce/skins/ui/oxide/skin.min.css'
 import 'tinymce/skins/ui/oxide/content.min.css'
 
