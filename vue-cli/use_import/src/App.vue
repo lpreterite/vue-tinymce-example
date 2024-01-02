@@ -24,7 +24,7 @@ export default {
         language: 'zh_CN',
         height: 350,
         skin: false,        //已在main.js中引入，所以无需再加载。
-        content_css: false, //要自定义编辑器内部的样式，文件建议放在全局可访问的地方进行管理。
+        content_css: '/tinymce/skins/ui/oxide/content.css', //要自定义编辑器内部的样式，目前文件存放在public目录下。
       }
     }
   }

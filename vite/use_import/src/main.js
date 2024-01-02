@@ -6,7 +6,7 @@ import "tinymce";
 //样式
 // import "tinymce/skins/content/default/content.min.css"; //默认模式下添加并不会起效果，开启内联模式时，请加上。
 import "tinymce/skins/ui/oxide/skin.min.css";
-import "tinymce/skins/ui/oxide/content.min.css";
+// import "tinymce/skins/ui/oxide/content.min.css"; //此处引用内容为编辑器文本区域的内部样式，需在编辑器设置中引入。
 
 //主题
 import "tinymce/themes/silver";
